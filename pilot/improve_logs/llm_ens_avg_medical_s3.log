@@ -1,0 +1,15 @@
+<python>\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:785: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (400) reached and the optimization hasn't converged yet.
+  warnings.warn(
+<python>\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:785: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (400) reached and the optimization hasn't converged yet.
+  warnings.warn(
+<python>\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:785: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (400) reached and the optimization hasn't converged yet.
+  warnings.warn(
+[Medical/agent/llama8b] steps=624 invalid=5.0% risky=44.9% acc=99.465% conf_err=0.160% FA={'cusum': np.float64(0.93), 'window': np.float64(0.93), 'rate': np.float64(0.755)}
+[Medical/agent/llama70b] steps=2504 invalid=0.0% risky=8.0% acc=99.770% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.055)}
+[Medical/agent/gptoss20b] steps=2504 invalid=19.8% risky=47.2% acc=99.874% conf_err=0.120% FA={'cusum': np.float64(0.875), 'window': np.float64(0.875), 'rate': np.float64(0.29)}
+[Medical/commission_small/llama8b] steps=624 invalid=5.0% risky=44.9% acc=99.866% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission_small/llama70b] steps=2504 invalid=0.0% risky=8.0% acc=99.541% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission_small/gptoss20b] steps=2504 invalid=19.8% risky=47.2% acc=99.958% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission/llama8b] steps=624 invalid=5.0% risky=44.9% acc=99.732% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission/llama70b] steps=2504 invalid=0.0% risky=8.0% acc=99.694% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission/gptoss20b] steps=2504 invalid=19.8% risky=47.2% acc=99.958% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}

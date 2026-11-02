@@ -1,0 +1,9 @@
+[Cyber/agent/llama8b] steps=624 invalid=31.9% risky=24.0% acc=98.852% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.005)}
+[Cyber/agent/llama70b] steps=2504 invalid=0.0% risky=0.0% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.0)}
+[Cyber/agent/gptoss20b] steps=2504 invalid=6.4% risky=36.2% acc=98.752% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.21)}
+[Cyber/commission_small/llama8b] steps=624 invalid=31.9% risky=24.0% acc=96.555% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.97)}
+[Cyber/commission_small/llama70b] steps=2504 invalid=0.0% risky=0.0% acc=98.030% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.765)}
+[Cyber/commission_small/gptoss20b] steps=2504 invalid=6.4% risky=36.2% acc=93.738% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Cyber/commission/llama8b] steps=624 invalid=31.9% risky=24.0% acc=98.947% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.99)}
+[Cyber/commission/llama70b] steps=2504 invalid=0.0% risky=0.0% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.765)}
+[Cyber/commission/gptoss20b] steps=2504 invalid=6.4% risky=36.2% acc=98.086% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}

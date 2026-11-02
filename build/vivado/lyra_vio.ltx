@@ -1,0 +1,240 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "50000000"
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "u_vio",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "407D14E81CC958EF8C2E354D7BF170FD",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 0,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "block",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 1,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "secded_status",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "secded_status[1]"
+                                            },
+                                            {
+                                                "name": "secded_status[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 2,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 21,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "fault_mask",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "fault_mask[21]"
+                                            },
+                                            {
+                                                "name": "fault_mask[20]"
+                                            },
+                                            {
+                                                "name": "fault_mask[19]"
+                                            },
+                                            {
+                                                "name": "fault_mask[18]"
+                                            },
+                                            {
+                                                "name": "fault_mask[17]"
+                                            },
+                                            {
+                                                "name": "fault_mask[16]"
+                                            },
+                                            {
+                                                "name": "fault_mask[15]"
+                                            },
+                                            {
+                                                "name": "fault_mask[14]"
+                                            },
+                                            {
+                                                "name": "fault_mask[13]"
+                                            },
+                                            {
+                                                "name": "fault_mask[12]"
+                                            },
+                                            {
+                                                "name": "fault_mask[11]"
+                                            },
+                                            {
+                                                "name": "fault_mask[10]"
+                                            },
+                                            {
+                                                "name": "fault_mask[9]"
+                                            },
+                                            {
+                                                "name": "fault_mask[8]"
+                                            },
+                                            {
+                                                "name": "fault_mask[7]"
+                                            },
+                                            {
+                                                "name": "fault_mask[6]"
+                                            },
+                                            {
+                                                "name": "fault_mask[5]"
+                                            },
+                                            {
+                                                "name": "fault_mask[4]"
+                                            },
+                                            {
+                                                "name": "fault_mask[3]"
+                                            },
+                                            {
+                                                "name": "fault_mask[2]"
+                                            },
+                                            {
+                                                "name": "fault_mask[1]"
+                                            },
+                                            {
+                                                "name": "fault_mask[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 3,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "zone_distance_q",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "zone_distance_q[15]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[14]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[13]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[12]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[11]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[10]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[9]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[8]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[7]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[6]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[5]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[4]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[3]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[2]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[1]"
+                                            },
+                                            {
+                                                "name": "zone_distance_q[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 4,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "auth_state",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

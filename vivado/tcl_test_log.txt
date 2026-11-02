@@ -1,0 +1,116 @@
+﻿INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 11-dec-2026.
+
+****** Vivado v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Fri Oct 16 22:59:41 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {D:\lyra_vio_build\vivado\program_and_test_uart.tcl}
+# open_hw_manager
+open_hw_manager: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 593.902 ; gain = 269.922
+# connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2026.1
+  **** Build date : May 29 2026 at 14:55:19
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx cs_server v2026.1
+  **** Build Info : #60 | 2026-06-15 19:15 UTC | a9691a9
+    ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 601.098 ; gain = 7.195
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210352B0BFB6A
+# set dev [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {D:/lyra_vio_build/build/vivado/lyra_vio_uart.bit} $dev
+# set_property PROBES.FILE  {D:/lyra_vio_build/build/vivado/lyra_vio_uart.ltx} $dev
+# program_hw_devices $dev
+INFO: [Labtools 27-3164] End of startup status: HIGH
+# refresh_hw_device $dev
+INFO: [Labtools 27-2302] Device xc7s50 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+# set vio [lindex [get_hw_vios -of_objects $dev] 0]
+# set p_fault [get_hw_probes fault_mask    -of_objects $vio]
+# set p_bg    [get_hw_probes bg_rate_q_raw -of_objects $vio]
+# set p_block [get_hw_probes block         -of_objects $vio]
+# set p_stat  [get_hw_probes secded_status -of_objects $vio]
+# proc drive {fault bg} {
+#     global vio p_fault p_bg
+#     set bg_u [expr {$bg & 0xFFFF}]
+#     set_property OUTPUT_VALUE [format %06x $fault] $p_fault
+#     set_property OUTPUT_VALUE [format %04x $bg_u]  $p_bg
+#     commit_hw_vio $vio
+# }
+# proc observe_vio {} {
+#     global vio p_block p_stat
+#     refresh_hw_vio $vio
+#     return [list [get_property INPUT_VALUE $p_block] [get_property INPUT_VALUE $p_stat]]
+# }
+# set BG_SAFE  0
+# set BG_BLOCK -2458
+# proc step {label fault bg} {
+#     global BG_SAFE
+#     drive $fault $bg
+#     after 400
+#     set r [observe_vio]
+#     set t [clock milliseconds]
+#     puts "STEP t=$t label=$label fault=$fault bg=$bg vio_block=[lindex $r 0] vio_status=[lindex $r 1]"
+# }
+# puts "TEST_START t=[clock milliseconds]"
+TEST_START t=1792159206442
+# step "baseline-SAFE"  0 $BG_SAFE
+STEP t=1792159206867 label=baseline-SAFE fault=0 bg=0 vio_block=0 vio_status=0
+# step "baseline-BLOCK" 0 $BG_BLOCK
+STEP t=1792159207281 label=baseline-BLOCK fault=0 bg=-2458 vio_block=0 vio_status=0
+# foreach bit {0 4 8 9 11 12 16 20} {
+#     set mask [expr {1 << $bit}]
+#     step "bit${bit}-SAFE"  $mask $BG_SAFE
+#     step "bit${bit}-BLOCK" $mask $BG_BLOCK
+# }
+STEP t=1792159207708 label=bit0-SAFE fault=1 bg=0 vio_block=0 vio_status=0
+STEP t=1792159208132 label=bit0-BLOCK fault=1 bg=-2458 vio_block=0 vio_status=0
+STEP t=1792159208559 label=bit4-SAFE fault=16 bg=0 vio_block=0 vio_status=0
+STEP t=1792159208986 label=bit4-BLOCK fault=16 bg=-2458 vio_block=0 vio_status=0
+STEP t=1792159209411 label=bit8-SAFE fault=256 bg=0 vio_block=0 vio_status=1
+STEP t=1792159209839 label=bit8-BLOCK fault=256 bg=-2458 vio_block=0 vio_status=0
+STEP t=1792159210265 label=bit9-SAFE fault=512 bg=0 vio_block=0 vio_status=0
+STEP t=1792159210695 label=bit9-BLOCK fault=512 bg=-2458 vio_block=0 vio_status=0
+STEP t=1792159211123 label=bit11-SAFE fault=2048 bg=0 vio_block=0 vio_status=0
+STEP t=1792159211552 label=bit11-BLOCK fault=2048 bg=-2458 vio_block=0 vio_status=0
+STEP t=1792159211977 label=bit12-SAFE fault=4096 bg=0 vio_block=0 vio_status=0
+STEP t=1792159212403 label=bit12-BLOCK fault=4096 bg=-2458 vio_block=1 vio_status=1
+STEP t=1792159212830 label=bit16-SAFE fault=65536 bg=0 vio_block=0 vio_status=1
+STEP t=1792159213256 label=bit16-BLOCK fault=65536 bg=-2458 vio_block=1 vio_status=1
+STEP t=1792159213700 label=bit20-SAFE fault=1048576 bg=0 vio_block=0 vio_status=1
+STEP t=1792159214113 label=bit20-BLOCK fault=1048576 bg=-2458 vio_block=0 vio_status=0
+# foreach pair {{4 5} {11 12} {0 21}} {
+#     set b0 [lindex $pair 0]; set b1 [lindex $pair 1]
+#     set mask [expr {(1 << $b0) | (1 << $b1)}]
+#     step "pair${b0}_${b1}-SAFE" $mask $BG_SAFE
+# }
+STEP t=1792159214541 label=pair4_5-SAFE fault=48 bg=0 vio_block=0 vio_status=0
+STEP t=1792159214965 label=pair11_12-SAFE fault=6144 bg=0 vio_block=1 vio_status=2
+STEP t=1792159215394 label=pair0_21-SAFE fault=2097153 bg=0 vio_block=1 vio_status=2
+# puts "TEST_END t=[clock milliseconds]"
+TEST_END t=1792159215394
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210352B0BFB6A
+# disconnect_hw_server
+# close_hw_manager
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 16 23:00:15 2026...

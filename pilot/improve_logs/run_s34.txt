@@ -1,0 +1,30 @@
+28 runs to do
+[   6.5 min] 1/28 gate0.2_s3 ok
+[   6.5 min] 2/28 gate0.4_s3 ok
+[   6.5 min] 3/28 p1_2_s3 ok
+[   6.6 min] 4/28 p1_8_s3 ok
+[   9.6 min] 5/28 ens_min_s3 ok
+[   9.7 min] 6/28 ens_avg_s3 ok
+[  12.4 min] 7/28 llm_ens_avg_financial_s3 ok
+[  12.4 min] 8/28 llm_ens_min_financial_s3 ok
+[  12.8 min] 9/28 llm_ens_avg_power_s3 ok
+[  12.8 min] 10/28 llm_ens_min_power_s3 ok
+[  13.0 min] 11/28 llm_ens_avg_cyber_s3 ok
+[  13.1 min] 12/28 llm_ens_min_cyber_s3 ok
+[  13.7 min] 13/28 gate0.2_s4 ok
+[  13.7 min] 14/28 gate0.4_s4 ok
+[  13.7 min] 15/28 p1_2_s4 ok
+[  13.8 min] 16/28 p1_8_s4 ok
+[  15.7 min] 17/28 llm_ens_avg_medical_s3 ok
+[  15.8 min] 18/28 llm_ens_min_medical_s3 ok
+[  19.1 min] 19/28 ens_avg_s4 ok
+[  19.2 min] 20/28 ens_min_s4 ok
+[  23.2 min] 21/28 llm_ens_avg_financial_s4 ok
+[  23.6 min] 22/28 llm_ens_min_financial_s4 ok
+[  24.0 min] 23/28 llm_ens_avg_cyber_s4 ok
+[  24.0 min] 24/28 llm_ens_avg_power_s4 ok
+[  24.7 min] 25/28 llm_ens_min_power_s4 ok
+[  24.9 min] 26/28 llm_ens_min_cyber_s4 ok
+[  25.9 min] 27/28 llm_ens_avg_medical_s4 ok
+[  26.3 min] 28/28 llm_ens_min_medical_s4 ok
+failed: none

@@ -1,0 +1,64 @@
+== dense (Table monitor)
+  T1.B4c                                 73.34 +-   1.12   [72.00, 74.90]  n=5
+  T3.B4c                                 96.16 +-   0.19   [95.91, 96.40]  n=5
+  D.B4c                                  57.12 +-   1.52   [55.16, 58.40]  n=5
+  I.B4c                                  60.07 +-   1.05   [58.87, 61.69]  n=5
+  C.B4c                                 100.00 +-   0.00   [100.00, 100.00]  n=5
+  ALL.B4c                                94.66 +-   0.23   [94.36, 94.95]  n=5
+  ALL.B2                                 91.45 +-   0.11   [91.25, 91.55]  n=5
+  ALL.B3                                 64.27 +-   0.93   [63.62, 65.89]  n=5
+  ALL.B4c_exposure                        2.33 +-   0.13   [2.20, 2.54]  n=5
+  ALL.veto_unsafe                         1.28 +-   0.38   [0.92, 1.84]  n=5
+  lat_med                                 5.40 +-   0.89   [4.00, 6.00]  n=5
+  lat_p90                                49.20 +-   4.09   [43.00, 54.00]  n=5
+  shift_fa_cusum_max                      0.30 +-   0.45   [0.00, 1.00]  n=5
+  veto_depth_max                          0.01 +-   0.00   [0.01, 0.02]  n=5
+== trigger (Table trigger)
+  B2                                     91.99 +-   0.11   [91.84, 92.09]  n=5
+  B3                                     40.52 +-   4.15   [36.88, 47.55]  n=5
+  B4c                                    93.14 +-   0.26   [92.79, 93.48]  n=5
+  lat_med                                 7.80 +-   2.39   [5.00, 11.00]  n=5
+  lat_p90                                81.00 +-  22.92   [57.00, 113.00]  n=5
+  exposure                                1.40 +-   0.26   [1.19, 1.76]  n=5
+  veto_unsafe                             0.44 +-   0.19   [0.25, 0.66]  n=5
+  veto_depth_max                          0.01 +-   0.00   [0.01, 0.01]  n=5
+  shift_fa_cusum_max                      0.10 +-   0.22   [0.00, 0.50]  n=5
+== llm (Table llm)
+  commission.llama8b.B4c                 78.06 +-   0.00   [78.06, 78.06]  n=1
+  commission.llama8b.fa                   0.00 +-   0.00   [0.00, 0.00]  n=1
+  commission.llama8b.B2                  97.25 +-   0.00   [97.25, 97.25]  n=1
+  commission.llama8b.fa_rate            100.00 +-   0.00   [100.00, 100.00]  n=1
+  commission.llama8b.lat_med             18.00 +-   0.00   [18.00, 18.00]  n=1
+  commission.llama8b.exposure             4.24 +-   0.00   [4.24, 4.24]  n=1
+  commission.llama8b.not_vetoed           0.00 +-   0.00   [0.00, 0.00]  n=1
+  commission.llama8b.missed_depth_max      0.02 +-   0.00   [0.02, 0.02]  n=1
+  commission.llama8b.overblock            1.40 +-   0.00   [1.40, 1.40]  n=1
+  commission.llama70b.B4c                92.67 +-   0.00   [92.67, 92.67]  n=1
+  commission.llama70b.fa                  0.00 +-   0.00   [0.00, 0.00]  n=1
+  commission.llama70b.B2                 94.50 +-   0.00   [94.50, 94.50]  n=1
+  commission.llama70b.fa_rate           100.00 +-   0.00   [100.00, 100.00]  n=1
+  commission.llama70b.lat_med            21.00 +-   0.00   [21.00, 21.00]  n=1
+  commission.llama70b.exposure            6.41 +-   0.00   [6.41, 6.41]  n=1
+  commission.llama70b.not_vetoed          0.04 +-   0.00   [0.04, 0.04]  n=1
+  commission.llama70b.missed_depth_max      0.02 +-   0.00   [0.02, 0.02]  n=1
+  commission.llama70b.overblock           1.32 +-   0.00   [1.32, 1.32]  n=1
+  commission.gptoss20b.B4c               94.50 +-   0.00   [94.50, 94.50]  n=1
+  commission.gptoss20b.fa                 0.00 +-   0.00   [0.00, 0.00]  n=1
+  commission.gptoss20b.B2                94.82 +-   0.00   [94.82, 94.82]  n=1
+  commission.gptoss20b.fa_rate          100.00 +-   0.00   [100.00, 100.00]  n=1
+  commission.gptoss20b.lat_med            7.00 +-   0.00   [7.00, 7.00]  n=1
+  commission.gptoss20b.exposure           3.19 +-   0.00   [3.19, 3.19]  n=1
+  commission.gptoss20b.not_vetoed         0.01 +-   0.00   [0.01, 0.01]  n=1
+  commission.gptoss20b.missed_depth_max      0.02 +-   0.00   [0.02, 0.02]  n=1
+  commission.gptoss20b.overblock          0.75 +-   0.00   [0.75, 0.75]  n=1
+  agent.llama8b.B4c                      33.63 +-   0.00   [33.63, 33.63]  n=1
+  agent.llama70b.B4c                     14.03 +-   0.00   [14.03, 14.03]  n=1
+  agent.gptoss20b.B4c                    20.46 +-   0.00   [20.46, 20.46]  n=1
+  commission_small.llama8b.B4c           15.05 +-   0.00   [15.05, 15.05]  n=1
+  commission_small.llama70b.B4c           0.00 +-   0.00   [0.00, 0.00]  n=1
+  commission_small.gptoss20b.B4c         27.65 +-   0.00   [27.65, 27.65]  n=1
+== ablation (seed 0)
+  mlp     recall ALL=94.4%  T3=95.9  D=55.2  I=58.9  exposure=2.33  veto=1.19  shiftFA=0.0%  acc_min=99.850%  overblock_max=0.106%
+  hgb     recall ALL=94.4%  T3=95.9  D=55.1  I=59.6  exposure=4.90  veto=1.75  shiftFA=3.0%  acc_min=99.814%  overblock_max=0.100%
+  knn     recall ALL=90.2%  T3=92.0  D=44.2  I=46.7  exposure=4.93  veto=7.73  shiftFA=3.0%  acc_min=98.958%  overblock_max=0.594%
+  logreg  recall ALL=87.1%  T3=89.0  D=39.0  I=40.7  exposure=4.80  veto=3.34  shiftFA=1.0%  acc_min=98.758%  overblock_max=0.624%

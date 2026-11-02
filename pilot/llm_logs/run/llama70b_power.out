@@ -1,0 +1,14 @@
+[llama70b/power] episode 1/313  12s elapsed
+[llama70b/power] episode 26/313  235s elapsed
+[llama70b/power] episode 51/313  470s elapsed
+[llama70b/power] episode 76/313  661s elapsed
+[llama70b/power] episode 101/313  891s elapsed
+[llama70b/power] episode 126/313  1105s elapsed
+[llama70b/power] episode 151/313  1226s elapsed
+[llama70b/power] episode 176/313  1367s elapsed
+[llama70b/power] episode 201/313  1525s elapsed
+[llama70b/power] episode 226/313  1720s elapsed
+[llama70b/power] episode 251/313  1914s elapsed
+[llama70b/power] episode 276/313  2108s elapsed
+[llama70b/power] episode 301/313  2300s elapsed
+[llama70b/power] DONE -> pilot\llm_logs\llama70b_power.jsonl

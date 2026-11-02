@@ -1,0 +1,9 @@
+[Financial/agent/llama8b] steps=624 invalid=1.3% risky=46.2% acc=99.877% conf_err=0.321% FA={'cusum': np.float64(0.965), 'window': np.float64(0.965), 'rate': np.float64(0.385)}
+[Financial/agent/llama70b] steps=2504 invalid=0.0% risky=78.6% acc=99.933% conf_err=0.200% FA={'cusum': np.float64(0.805), 'window': np.float64(0.805), 'rate': np.float64(0.085)}
+[Financial/agent/gptoss20b] steps=2504 invalid=35.1% risky=27.8% acc=99.960% conf_err=0.080% FA={'cusum': np.float64(0.85), 'window': np.float64(0.85), 'rate': np.float64(0.015)}
+[Financial/commission_small/llama8b] steps=624 invalid=1.3% risky=46.2% acc=99.877% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Financial/commission_small/llama70b] steps=2504 invalid=0.0% risky=78.6% acc=99.840% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Financial/commission_small/gptoss20b] steps=2504 invalid=35.1% risky=27.8% acc=99.940% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Financial/commission/llama8b] steps=624 invalid=1.3% risky=46.2% acc=99.631% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Financial/commission/llama70b] steps=2504 invalid=0.0% risky=78.6% acc=99.654% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Financial/commission/gptoss20b] steps=2504 invalid=35.1% risky=27.8% acc=99.881% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}

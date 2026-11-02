@@ -1,0 +1,8 @@
+== dense synthetic setting
+paper (mlp, gate .3, p1 4)   n=3  recall=94.63±0.30  recall_low=34.35±4.02  D=57.16±1.75  I=60.28±1.41  exposure=2.36±0.18  veto=1.20±0.28  missed_max=0.96±0.02  missed_p90=0.01±0.00  silent_alarm=1.50±1.34  shift_fa_max=0.17±0.29
+gate 0.2                     n=3  recall=95.13±0.20  recall_low=40.41±3.07  D=58.29±1.03  I=61.40±0.98  exposure=2.99±0.28  veto=1.20±0.28  missed_max=0.96±0.02  missed_p90=0.01±0.00  silent_alarm=0.00±0.00  shift_fa_max=3.50±3.28
+gate 0.4                     n=3  recall=93.69±0.35  recall_low=24.37±3.17  D=55.44±0.69  I=56.77±1.25  exposure=1.84±0.17  veto=1.20±0.28  missed_max=0.95±0.00  missed_p90=0.01±0.00  silent_alarm=0.00±0.00  shift_fa_max=1.00±1.32
+p1 2                         n=3  recall=94.64±0.30  recall_low=34.41±3.97  D=57.20±1.78  I=60.31±1.41  exposure=2.36±0.17  veto=1.20±0.28  missed_max=0.96±0.02  missed_p90=0.01±0.00  silent_alarm=1.50±1.34  shift_fa_max=0.17±0.29
+p1 8                         n=3  recall=94.62±0.33  recall_low=34.21±4.40  D=57.26±1.81  I=60.40±1.60  exposure=2.35±0.18  veto=1.20±0.28  missed_max=0.96±0.02  missed_p90=0.01±0.00  silent_alarm=1.50±1.34  shift_fa_max=0.17±0.29
+ens_avg                      n=3  recall=95.96±0.39  recall_low=50.60±5.06  D=61.32±2.12  I=64.08±1.50  exposure=2.28±0.19  veto=1.15±0.19  missed_max=0.96±0.02  missed_p90=0.01±0.00  silent_alarm=1.46±2.52  shift_fa_max=2.67±1.04
+ens_min                      n=3  recall=95.03±0.25  recall_low=39.23±3.01  D=59.53±0.98  I=61.11±0.99  exposure=1.65±0.24  veto=0.47±0.18  missed_max=0.95±0.00  missed_p90=0.01±0.00  silent_alarm=3.68±6.38  shift_fa_max=0.50±0.87

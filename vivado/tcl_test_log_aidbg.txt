@@ -1,0 +1,162 @@
+﻿INFO: [Common 17-3922] A valid Vivado Design Suite ENTERPRISE license has been detected. Your current license is active and will expire on 11-dec-2026.
+
+****** Vivado v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Sat Oct 17 00:38:00 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {D:\lyra_vio_build\vivado\program_and_test_aidbg.tcl}
+# open_hw_manager
+open_hw_manager: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 594.484 ; gain = 270.059
+# connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2026.1
+  **** Build date : May 29 2026 at 14:55:19
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx cs_server v2026.1
+  **** Build Info : #60 | 2026-06-15 19:15 UTC | a9691a9
+    ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 601.676 ; gain = 7.191
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210352B0BFB6A
+# set dev [lindex [get_hw_devices] 0]
+# set_property PROGRAM.FILE {D:/lyra_vio_build/build/vivado/lyra_vio_aidbg.bit} $dev
+# set_property PROBES.FILE  {D:/lyra_vio_build/build/vivado/lyra_vio_aidbg.ltx} $dev
+# program_hw_devices $dev
+INFO: [Labtools 27-3164] End of startup status: HIGH
+# refresh_hw_device $dev
+INFO: [Labtools 27-2302] Device xc7s50 (JTAG device index = 0) is programmed with a design that has 1 VIO core(s).
+INFO: [Labtools 27-1889] Uploading output probe values for VIO core [hw_vio_1]
+# set vio [lindex [get_hw_vios -of_objects $dev] 0]
+# set p_fault [get_hw_probes fault_mask           -of_objects $vio]
+# set p_zd    [get_hw_probes zone_distance_q_raw  -of_objects $vio]
+# set p_auth  [get_hw_probes auth_state           -of_objects $vio]
+# set p_block [get_hw_probes block                -of_objects $vio]
+# set p_stat  [get_hw_probes secded_status        -of_objects $vio]
+# set p_theta [get_hw_probes theta_corrected_dbg  -of_objects $vio]
+# proc drive {fault zd auth} {
+#     global vio p_fault p_zd p_auth
+#     set_property OUTPUT_VALUE [format %06x $fault] $p_fault
+#     set_property OUTPUT_VALUE [format %04x $zd]    $p_zd
+#     set_property OUTPUT_VALUE [format %01x $auth]  $p_auth
+#     commit_hw_vio $vio
+# }
+# proc observe {} {
+#     global vio p_block p_stat p_theta
+#     refresh_hw_vio $vio
+#     return [list [get_property INPUT_VALUE $p_block] [get_property INPUT_VALUE $p_stat] [get_property INPUT_VALUE $p_theta]]
+# }
+# set ZD_SAFE 410
+# drive 0 $ZD_SAFE 0
+# after 200
+# set r [observe]
+# puts "SAMPLE label=baseline fault=0 theta_hex=[lindex $r 2] status=[lindex $r 1] block=[lindex $r 0]"
+SAMPLE label=baseline fault=0 theta_hex=04cd status=0 block=0
+# set seed 12345
+# proc nextrand {} {
+#     global seed
+#     set seed [expr {(1103515245 * $seed + 12345) % 2147483648}]
+#     return $seed
+# }
+# set seen {}
+# set n 0
+# while {$n < 60} {
+#     set a [expr {[nextrand] % 21}]
+#     set b [expr {[nextrand] % 21}]
+#     set c [expr {[nextrand] % 21}]
+#     if {$a == $b || $b == $c || $a == $c} { continue }
+#     set key [lsort -integer [list $a $b $c]]
+#     if {[lsearch -exact $seen $key] >= 0} { continue }
+#     lappend seen $key
+#     set mask [expr {(1 << $a) | (1 << $b) | (1 << $c)}]
+#     drive $mask $ZD_SAFE 0
+#     after 200
+#     set r [observe]
+#     puts "SAMPLE label=triple_${a}_${b}_${c} fault=$mask theta_hex=[lindex $r 2] status=[lindex $r 1] block=[lindex $r 0]"
+#     incr n
+# }
+SAMPLE label=triple_16_20_10 fault=1115136 theta_hex=888d status=1 block=1
+SAMPLE label=triple_7_3_8 fault=392 theta_hex=04df status=1 block=0
+SAMPLE label=triple_14_15_4 fault=49168 theta_hex=00cf status=1 block=1
+SAMPLE label=triple_7_1_12 fault=4226 theta_hex=05c5 status=1 block=0
+SAMPLE label=triple_11_8_14 fault=18688 theta_hex=007d status=1 block=1
+SAMPLE label=triple_12_5_7 fault=4256 theta_hex=05c8 status=1 block=0
+SAMPLE label=triple_11_18_4 fault=264208 theta_hex=244f status=1 block=0
+SAMPLE label=triple_1_17_16 fault=196610 theta_hex=1ccd status=1 block=0
+SAMPLE label=triple_6_1_4 fault=82 theta_hex=04c7 status=0 block=0
+SAMPLE label=triple_2_16_4 fault=65556 theta_hex=0cce status=1 block=0
+SAMPLE label=triple_8_7_15 fault=33152 theta_hex=0cdd status=1 block=0
+SAMPLE label=triple_5_11_9 fault=2592 theta_hex=0469 status=0 block=0
+SAMPLE label=triple_14_8_9 fault=17152 theta_hex=007d status=1 block=1
+SAMPLE label=triple_14_6_20 fault=1065024 theta_hex=80c5 status=1 block=1
+SAMPLE label=triple_10_4_17 fault=132112 theta_hex=148f status=1 block=0
+SAMPLE label=triple_13_18_2 fault=270340 theta_hex=26cc status=1 block=0
+SAMPLE label=triple_3_17_20 fault=1179656 theta_hex=94cc status=1 block=1
+SAMPLE label=triple_18_0_5 fault=262177 theta_hex=64c9 status=1 block=0
+SAMPLE label=triple_13_10_20 fault=1057792 theta_hex=868d status=1 block=1
+SAMPLE label=triple_12_1_10 fault=5122 theta_hex=058d status=1 block=0
+SAMPLE label=triple_14_20_12 fault=1069056 theta_hex=81cd status=1 block=1
+SAMPLE label=triple_8_14_0 fault=16641 theta_hex=00d5 status=1 block=1
+SAMPLE label=triple_13_4_11 fault=10256 theta_hex=0647 status=1 block=0
+SAMPLE label=triple_11_10_16 fault=68608 theta_hex=0c0d status=1 block=0
+SAMPLE label=triple_20_19_17 fault=1703936 theta_hex=f4cd status=1 block=1
+SAMPLE label=triple_13_2_1 fault=8198 theta_hex=02cc status=1 block=0
+SAMPLE label=triple_14_17_19 fault=671744 theta_hex=50dd status=1 block=0
+SAMPLE label=triple_7_20_16 fault=1114240 theta_hex=8c4d status=1 block=1
+SAMPLE label=triple_3_8_13 fault=8456 theta_hex=06dc status=1 block=0
+SAMPLE label=triple_7_12_17 fault=135296 theta_hex=15cd status=1 block=0
+SAMPLE label=triple_0_16_18 fault=327681 theta_hex=2ccc status=1 block=0
+SAMPLE label=triple_1_17_0 fault=131075 theta_hex=1ccd status=1 block=0
+SAMPLE label=triple_0_16_5 fault=65569 theta_hex=0cc9 status=1 block=0
+SAMPLE label=triple_8_17_1 fault=131330 theta_hex=14dd status=1 block=0
+SAMPLE label=triple_20_14_11 fault=1067008 theta_hex=804d status=1 block=1
+SAMPLE label=triple_13_2_19 fault=532484 theta_hex=46cc status=1 block=0
+SAMPLE label=triple_7_18_14 fault=278656 theta_hex=60cd status=1 block=0
+SAMPLE label=triple_16_12_10 fault=70656 theta_hex=0d8d status=1 block=0
+SAMPLE label=triple_20_1_10 fault=1049602 theta_hex=848d status=1 block=1
+SAMPLE label=triple_1_16_2 fault=65542 theta_hex=0ccc status=1 block=0
+SAMPLE label=triple_1_9_16 fault=66050 theta_hex=0ced status=1 block=0
+SAMPLE label=triple_11_7_0 fault=2177 theta_hex=044f status=1 block=0
+SAMPLE label=triple_2_11_7 fault=2180 theta_hex=0444 status=1 block=0
+SAMPLE label=triple_13_15_10 fault=41984 theta_hex=868d status=1 block=1
+SAMPLE label=triple_1_12_9 fault=4610 theta_hex=05ef status=1 block=0
+SAMPLE label=triple_17_3_11 fault=133128 theta_hex=144d status=1 block=0
+SAMPLE label=triple_16_13_7 fault=73856 theta_hex=0ecd status=1 block=0
+SAMPLE label=triple_11_2_17 fault=133124 theta_hex=144c status=1 block=0
+SAMPLE label=triple_16_13_4 fault=73744 theta_hex=0ecf status=1 block=0
+SAMPLE label=triple_4_20_16 fault=1114128 theta_hex=8ccf status=1 block=1
+SAMPLE label=triple_11_7_19 fault=526464 theta_hex=444d status=1 block=0
+SAMPLE label=triple_9_15_12 fault=37376 theta_hex=05ed status=1 block=0
+SAMPLE label=triple_16_19_12 fault=593920 theta_hex=4dcd status=1 block=0
+SAMPLE label=triple_7_19_0 fault=524417 theta_hex=44cd status=1 block=0
+SAMPLE label=triple_20_2_15 fault=1081348 theta_hex=84c8 status=1 block=1
+SAMPLE label=triple_19_2_16 fault=589828 theta_hex=4cc8 status=1 block=0
+SAMPLE label=triple_1_15_0 fault=32771 theta_hex=24cd status=1 block=0
+SAMPLE label=triple_0_8_20 fault=1048833 theta_hex=84dd status=1 block=1
+SAMPLE label=triple_1_14_3 fault=16394 theta_hex=00dd status=1 block=1
+SAMPLE label=triple_15_0_17 fault=163841 theta_hex=14cc status=1 block=0
+# puts "AIDBG_COLLECTION_DONE n=$n"
+AIDBG_COLLECTION_DONE n=60
+# close_hw_target
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210352B0BFB6A
+# disconnect_hw_server
+# close_hw_manager
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 17 00:38:38 2026...

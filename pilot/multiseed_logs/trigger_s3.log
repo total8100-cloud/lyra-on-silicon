@@ -1,0 +1,24 @@
+[Financial] active fraction per constraint=[0.25, 1.0, 0.25, 0.25]  surrogate acc(active)=99.860%  tau_s=1 p0=2.50e-06  shift FA: {'low': {'surrogate': np.float64(0.0), 'cusum': np.float64(0.0), 'rate': np.float64(0.005)}, 'high': {'surrogate': np.float64(0.0), 'cusum': np.float64(0.0), 'rate': np.float64(1.0)}}
+[Medical] active fraction per constraint=[0.25, 0.25, 0.25, 0.25, 0.25]  surrogate acc(active)=99.854%  tau_s=1 p0=2.50e-06  shift FA: {'low': {'surrogate': np.float64(0.0), 'cusum': np.float64(0.0), 'rate': np.float64(1.0)}, 'high': {'surrogate': np.float64(0.0), 'cusum': np.float64(0.0), 'rate': np.float64(1.0)}}
+[Cyber] active fraction per constraint=[0.2, 0.2, 0.2, 1.0]  surrogate acc(active)=99.903%  tau_s=1 p0=2.50e-06  shift FA: {'low': {'surrogate': np.float64(0.0), 'cusum': np.float64(0.0), 'rate': np.float64(0.005)}, 'high': {'surrogate': np.float64(0.0), 'cusum': np.float64(0.0), 'rate': np.float64(0.9)}}
+[Power] active fraction per constraint=[1.0, 0.2, 1.0, 1.0]  surrogate acc(active)=99.896%  tau_s=1 p0=2.50e-06  shift FA: {'low': {'surrogate': np.float64(0.0), 'cusum': np.float64(0.0), 'rate': np.float64(0.005)}, 'high': {'surrogate': np.float64(0.0), 'cusum': np.float64(0.0), 'rate': np.float64(0.005)}}
+
+[trigger-aware] harmful faults: 5204/9367
+class  #harm     B1     B2     B3  B4win  B4cus unsafe/T  B3 exp B4c exp  veto
+T1       142  73.2%  76.1%  26.3%  74.1%  74.1%    225.0   47.17    1.40  0.24
+T3      4656  94.4%  95.2%  40.0%  94.7%  94.7%    371.0   72.53    1.22  0.25
+D        194   0.0%   0.0%  11.8%  60.8%  60.8%     73.9   32.95    1.13  0.16
+I        195   0.0%   0.0%  13.4%  61.9%  61.9%     83.2   36.74    1.26  0.19
+C         17   0.0%   0.0%  45.9% 100.0% 100.0%    476.6   92.40    1.04  0.27
+ALL     5204  91.2%  92.0%  39.0%  93.5%  93.5%    360.7   71.14    1.22  0.25
+Recall by severity (unsafe passes per T):
+  (0,5] n=  381  B2= 25.6%  B3=  0.0%  B4cus= 14.6%  exposure B4cus=1.69
+  (5,20] n=  324  B2= 78.4%  B3=  0.0%  B4cus= 83.9%  exposure B4cus=2.76
+  (20,100] n=  819  B2= 94.6%  B3=  6.0%  B4cus=100.0%  exposure B4cus=1.25
+  (100,inf] n= 3680  B2= 98.9%  B3= 55.7%  B4cus=100.0%  exposure B4cus=1.00
+B4cus recall vs. how often the faulted constraint is active (constraint-level faults):
+  active in [0,0.3) of steps: n=3359  recall=92.5%  median latency=8  exposure=1.27
+  active in [0.3,1.01) of steps: n=1650  recall=96.9%  median latency=1  exposure=1.10
+Silent faults: 387, B4cus alarm rate 0.0%
+Worst depth of an unsafe pass surviving the veto: 0.0068; worst depth from a never-flagged fault: 0.0454
+B4cus latency on harmful faults: median=6, p90=57

@@ -1,0 +1,9 @@
+[Power/agent/llama8b] steps=624 invalid=0.0% risky=0.0% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.0)}
+[Power/agent/llama70b] steps=2504 invalid=0.0% risky=0.0% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.0)}
+[Power/agent/gptoss20b] steps=2504 invalid=53.2% risky=0.0% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.0)}
+[Power/commission_small/llama8b] steps=624 invalid=0.0% risky=0.0% acc=99.792% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Power/commission_small/llama70b] steps=2504 invalid=0.0% risky=0.0% acc=99.778% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Power/commission_small/gptoss20b] steps=2504 invalid=53.2% risky=0.0% acc=99.716% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Power/commission/llama8b] steps=624 invalid=0.0% risky=0.0% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Power/commission/llama70b] steps=2504 invalid=0.0% risky=0.0% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Power/commission/gptoss20b] steps=2504 invalid=53.2% risky=0.0% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}

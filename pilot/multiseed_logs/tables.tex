@@ -1,0 +1,33 @@
+% ---- tab:monitor
+T1 $\theta$, no ECC   & 150 & 71.3 & 73.3 & 40.9 & 70.2 & \textbf{73.3} & 380.2 & 44.8 & \textbf{2.65} & 1.17 \\
+T3 $\theta$, SECDED   & 4668 & 94.3 & 94.9 & 66.0 & 95.2 & \textbf{96.2} & 653.9 & 64.6 & \textbf{2.33} & 1.30 \\
+D expr.\ register     & 213 & 0.0 & 0.0 & 20.7 & 53.1 & \textbf{57.1} & 144.6 & 37.9 & \textbf{2.18} & 0.59 \\
+I input register      & 213 & 0.0 & 0.0 & 23.2 & 55.9 & \textbf{60.1} & 163.4 & 38.7 & \textbf{2.39} & 0.79 \\
+C comparator          & 17 & 0.0 & 0.0 & 76.5 & 100.0 & \textbf{100.0} & 874.0 & 73.3 & \textbf{2.09} & 1.25 \\
+\midrule
+All                   & 5262 & 90.8 & 91.4 & 64.3 & 93.6 & \textbf{94.7} & 634.5 & 63.5 & \textbf{2.33} & 1.28 \\
+\quad s.d.\ over runs & & 0.0 & 0.1 & 0.9 & 0.3 & 0.2 & & 1.2 & 0.13 & 0.38 \\
+% ---- tab:trigger (dense | trigger-gated), mean +- s.d. over runs
+Recall on harmful faults, B4 (CUSUM) & 94.7 $\pm$ 0.2\% & 93.1 $\pm$ 0.3\% \\
+Recall on harmful faults, B2 ($\theta$ IsolationForest) & 91.4 $\pm$ 0.1\% & 92.0 $\pm$ 0.1\% \\
+Recall on harmful faults, B3 (BLOCK-rate) & 64.3 $\pm$ 0.9\% & 40.5 $\pm$ 4.2\% \\
+B4 latency, median (steps) & 5.4 $\pm$ 0.9 & 7.8 $\pm$ 2.4 \\
+B4 latency, 90th percentile (steps) & 49 $\pm$ 4 & 81 $\pm$ 23 \\
+Unsafe passes before B4 alarm & 2.33 $\pm$ 0.13 & 1.40 $\pm$ 0.26 \\
+Unsafe passes surviving the veto & 1.28 $\pm$ 0.38 & 0.44 $\pm$ 0.19 \\
+Deepest unsafe pass surviving the veto (max) & 0.019 & 0.008 \\
+False alarms under input shift, B4 (worst run) & 1.0\% & 0.5\% \\
+% ---- tab:llm (commission regime), mean +- s.d. over runs
+Recall, B4 (CUSUM) & 91.6 $\pm$ 8.1\% & 90.6 $\pm$ 3.4\% & 94.5 $\pm$ 2.0\% \\
+Recall, B2 ($\theta$ readout) & 97.3\% & 94.6\% & 94.8\% \\
+False alarms, B4 / B3 & 0.0\% / 100\% & 0.0\% / 98\% & 0.0\% / 100\% \\
+Median B4 latency (steps) & 22 $\pm$ 7 & 78 $\pm$ 52 & 6 $\pm$ 4 \\
+Unsafe passes before alarm & 3.5 $\pm$ 1.9 & 5.6 $\pm$ 2.8 & 3.0 $\pm$ 1.9 \\
+\quad of which not vetoed & 0.52 $\pm$ 0.82 & 1.07 $\pm$ 1.55 & 0.47 $\pm$ 0.78 \\
+Deepest unsafe pass, never-flagged fault (max) & 0.02 & 0.12 & 0.02 \\
+Veto over-blocking (fault-free steps) & 0.73 $\pm$ 0.58\% & 0.60 $\pm$ 0.49\% & 0.87 $\pm$ 0.35\% \\
+% ---- ablation (mean over 5 runs; worst run for shift FA)
+MLP (64--64), used & 99.85\% & 94.7 $\pm$ 0.2\% & 57.1\% & 60.1\% & 2.33 & 1.28 & 1.0\% \\
+Gradient-boosted trees & 99.85\% & 94.8 $\pm$ 0.3\% & 56.0\% & 59.9\% & 4.62 & 1.40 & 13.0\% \\
+$k$-nearest neighbours ($k=15$) & 98.95\% & 90.7 $\pm$ 0.8\% & 46.7\% & 49.0\% & 4.80 & 8.09 & 7.0\% \\
+Logistic regression & 98.77\% & 86.9 $\pm$ 0.1\% & 38.7\% & 40.3\% & 5.10 & 3.24 & 1.0\% \\

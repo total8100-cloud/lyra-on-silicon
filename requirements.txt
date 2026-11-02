@@ -1,0 +1,10 @@
+# Versions used for the paper's results (Python 3.11.9)
+numpy==2.4.4
+scipy==1.17.1
+scikit-learn==1.8.0
+sympy==1.14.0
+PyYAML==6.0.3
+matplotlib==3.10.8
+# only for collecting new LLM-agent logs (pilot/lyra_llm_agent_logs.py, pilot/llm_api_probe.py)
+openai==2.30.0
+groq==1.1.2

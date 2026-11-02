@@ -1,0 +1,17 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[llama8b/cyber] episode 1/313  13s elapsed
+[llama8b/cyber] episode 26/313  140s elapsed
+[llama8b/cyber] episode 51/313  245s elapsed
+[llama8b/cyber] episode 76/313  340s elapsed
+[llama8b/cyber] episode 101/313  436s elapsed
+[llama8b/cyber] episode 126/313  538s elapsed
+[llama8b/cyber] episode 151/313  655s elapsed
+[llama8b/cyber] episode 176/313  770s elapsed
+[llama8b/cyber] episode 201/313  879s elapsed
+[llama8b/cyber] episode 226/313  998s elapsed
+[llama8b/cyber] episode 251/313  1125s elapsed
+[llama8b/cyber] episode 276/313  1247s elapsed
+[llama8b/cyber] episode 301/313  1373s elapsed
+[llama8b/cyber] DONE -> pilot\llm_logs\llama8b_cyber.jsonl

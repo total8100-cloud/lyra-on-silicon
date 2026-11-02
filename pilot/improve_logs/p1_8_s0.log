@@ -1,0 +1,29 @@
+[Financial] surrogate per-output acc=99.876%  veto over-block=0.106%  tau_s=3 tau_r=5.08  shift FA: {'low': {'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}, 'high': {'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}}
+[Medical] surrogate per-output acc=99.886%  veto over-block=0.074%  tau_s=2 tau_r=4.61  shift FA: {'low': {'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}, 'high': {'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}}
+[Cyber] surrogate per-output acc=99.889%  veto over-block=0.032%  tau_s=2 tau_r=4.40  shift FA: {'low': {'surrogate': np.float64(0.0), 'rate': np.float64(0.97), 'cusum': np.float64(0.0)}, 'high': {'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}}
+[Power] surrogate per-output acc=99.850%  veto over-block=0.059%  tau_s=2 tau_r=4.73  shift FA: {'low': {'surrogate': np.float64(0.0), 'rate': np.float64(0.025), 'cusum': np.float64(0.0)}, 'high': {'surrogate': np.float64(0.0), 'rate': np.float64(0.02), 'cusum': np.float64(0.0)}}
+
+Recall on HARMFUL faults (>=1 unsafe pass in the stream), weighted by multiplicity:
+class  #harmful  B1 rule   B2 IF  B3 rate   B4 win   B4 cus  unsafe/T  B3 exp B4w exp B4c exp veto res
+T1          150    71.3%   73.3%    39.9%    69.1%    72.0%     379.2   45.73    3.23    2.68     1.08
+T3         4668    94.3%   95.0%    65.5%    94.8%    95.9%     652.6   65.49    2.71    2.31     1.21
+D           215     0.0%    0.0%    19.7%    50.5%    55.2%     142.5   38.34    2.76    2.25     0.57
+I           212     0.0%    0.0%    22.5%    54.4%    58.9%     163.8   39.72    3.07    2.52     0.67
+C            17     0.0%    0.0%    76.5%   100.0%   100.0%     871.8   73.33    2.26    2.02     1.20
+ALL        5262    90.8%   91.5%    63.8%    93.1%    94.3%     633.3   64.40    2.72    2.31     1.19
+
+Behaviorally silent faults (no decision changes in any test stream): 272 -- B4 alarm rate on them 0.0% (should be ~0: nothing observable changed, and nothing unsafe happened)
+
+Recall by fault severity (unsafe passes per T decisions without any monitor):
+  (0,5]  n=  287  B1=  7.5%  B2=  7.5%  B3=  0.0%  B4win=  0.2%  B4cus=  1.0%
+  (5,20]  n=  224  B1= 44.1%  B2= 46.7%  B3=  0.0%  B4win= 32.5%  B4cus= 55.8%
+  (20,100]  n=  359  B1= 74.8%  B2= 81.2%  B3=  4.3%  B4win= 98.3%  B4cus=100.0%
+  (100,inf]  n= 4392  B1= 98.6%  B2= 98.6%  B3= 76.0%  B4win=100.0%  B4cus=100.0%
+Worst violation depth of any unsafe pass from a fault B4cus never flagged: 0.9500 (vs. 1.0000 with no monitor)
+Worst violation depth of any unsafe pass surviving the veto (any fault, any stream): 0.0193; faults with any surviving unsafe pass: 5017/9367
+B4cus latency on harmful faults: median=4, p90=43
+B4 detection latency on harmful faults (decisions): median=5, p90=41, max=1996
+  Financial  shift false-alarm: low={'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}, high={'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}
+  Medical    shift false-alarm: low={'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}, high={'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}
+  Cyber      shift false-alarm: low={'surrogate': np.float64(0.0), 'rate': np.float64(0.97), 'cusum': np.float64(0.0)}, high={'surrogate': np.float64(0.0), 'rate': np.float64(1.0), 'cusum': np.float64(0.0)}
+  Power      shift false-alarm: low={'surrogate': np.float64(0.0), 'rate': np.float64(0.025), 'cusum': np.float64(0.0)}, high={'surrogate': np.float64(0.0), 'rate': np.float64(0.02), 'cusum': np.float64(0.0)}

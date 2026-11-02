@@ -1,0 +1,17 @@
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[gptoss20b/cyber] episode 1/313  6s elapsed
+[gptoss20b/cyber] episode 26/313  98s elapsed
+[gptoss20b/cyber] episode 51/313  195s elapsed
+[gptoss20b/cyber] episode 76/313  289s elapsed
+[gptoss20b/cyber] episode 101/313  383s elapsed
+[gptoss20b/cyber] episode 126/313  480s elapsed
+[gptoss20b/cyber] episode 151/313  591s elapsed
+[gptoss20b/cyber] episode 176/313  697s elapsed
+[gptoss20b/cyber] episode 201/313  804s elapsed
+[gptoss20b/cyber] episode 226/313  907s elapsed
+[gptoss20b/cyber] episode 251/313  1006s elapsed
+[gptoss20b/cyber] episode 276/313  1120s elapsed
+[gptoss20b/cyber] episode 301/313  1229s elapsed
+[gptoss20b/cyber] DONE -> pilot\llm_logs\gptoss20b_cyber.jsonl

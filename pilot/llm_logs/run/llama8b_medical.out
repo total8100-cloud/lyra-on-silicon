@@ -1,0 +1,13 @@
+[llama8b/medical] episode 26/313  133s elapsed
+[llama8b/medical] episode 51/313  242s elapsed
+[llama8b/medical] episode 76/313  344s elapsed
+[llama8b/medical] episode 101/313  443s elapsed
+[llama8b/medical] episode 126/313  551s elapsed
+[llama8b/medical] episode 151/313  663s elapsed
+[llama8b/medical] episode 176/313  777s elapsed
+[llama8b/medical] episode 201/313  881s elapsed
+[llama8b/medical] episode 226/313  996s elapsed
+[llama8b/medical] episode 251/313  1099s elapsed
+[llama8b/medical] episode 276/313  1221s elapsed
+[llama8b/medical] episode 301/313  1334s elapsed
+[llama8b/medical] DONE -> pilot\llm_logs\llama8b_medical.jsonl

@@ -1,0 +1,14 @@
+[llama8b/financial] episode 1/313  10s elapsed
+[llama8b/financial] episode 26/313  149s elapsed
+[llama8b/financial] episode 51/313  260s elapsed
+[llama8b/financial] episode 76/313  359s elapsed
+[llama8b/financial] episode 101/313  454s elapsed
+[llama8b/financial] episode 126/313  558s elapsed
+[llama8b/financial] episode 151/313  663s elapsed
+[llama8b/financial] episode 176/313  764s elapsed
+[llama8b/financial] episode 201/313  851s elapsed
+[llama8b/financial] episode 226/313  959s elapsed
+[llama8b/financial] episode 251/313  1058s elapsed
+[llama8b/financial] episode 276/313  1165s elapsed
+[llama8b/financial] episode 301/313  1271s elapsed
+[llama8b/financial] DONE -> pilot\llm_logs\llama8b_financial.jsonl

@@ -1,0 +1,14 @@
+[llama70b/financial] episode 1/313  11s elapsed
+[llama70b/financial] episode 26/313  198s elapsed
+[llama70b/financial] episode 51/313  366s elapsed
+[llama70b/financial] episode 76/313  515s elapsed
+[llama70b/financial] episode 101/313  681s elapsed
+[llama70b/financial] episode 126/313  819s elapsed
+[llama70b/financial] episode 151/313  1005s elapsed
+[llama70b/financial] episode 176/313  1134s elapsed
+[llama70b/financial] episode 201/313  1239s elapsed
+[llama70b/financial] episode 226/313  1367s elapsed
+[llama70b/financial] episode 251/313  1503s elapsed
+[llama70b/financial] episode 276/313  1623s elapsed
+[llama70b/financial] episode 301/313  1756s elapsed
+[llama70b/financial] DONE -> pilot\llm_logs\llama70b_financial.jsonl

@@ -1,0 +1,24 @@
+# API keys -- never commit
+*.env
+.env*
+
+__pycache__/
+*.pyc
+
+# fetched by setup_lyra.py
+lyra_backend/experiment/lyra/
+
+# raw results, distributed as raw_results.zip
+pilot/*_results*.json
+!pilot/behavioral_hil_results.json
+
+# generated
+figures/
+sim/*.vvp
+
+# Vivado scratch
+.Xil/
+*.jou
+*.str
+*.dcp
+vivado*.log

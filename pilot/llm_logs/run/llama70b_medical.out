@@ -1,0 +1,13 @@
+[llama70b/medical] episode 26/313  312s elapsed
+[llama70b/medical] episode 51/313  559s elapsed
+[llama70b/medical] episode 76/313  795s elapsed
+[llama70b/medical] episode 101/313  1021s elapsed
+[llama70b/medical] episode 126/313  1181s elapsed
+[llama70b/medical] episode 151/313  1312s elapsed
+[llama70b/medical] episode 176/313  1437s elapsed
+[llama70b/medical] episode 201/313  1624s elapsed
+[llama70b/medical] episode 226/313  1864s elapsed
+[llama70b/medical] episode 251/313  2106s elapsed
+[llama70b/medical] episode 276/313  2344s elapsed
+[llama70b/medical] episode 301/313  2532s elapsed
+[llama70b/medical] DONE -> pilot\llm_logs\llama70b_medical.jsonl

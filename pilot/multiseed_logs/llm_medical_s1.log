@@ -1,0 +1,9 @@
+[Medical/agent/llama8b] steps=624 invalid=5.0% risky=44.9% acc=95.181% conf_err=0.160% FA={'cusum': np.float64(0.98), 'window': np.float64(0.98), 'rate': np.float64(0.765)}
+[Medical/agent/llama70b] steps=2504 invalid=0.0% risky=8.0% acc=86.151% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(0.125)}
+[Medical/agent/gptoss20b] steps=2504 invalid=19.8% risky=47.2% acc=99.832% conf_err=0.160% FA={'cusum': np.float64(0.97), 'window': np.float64(0.97), 'rate': np.float64(0.275)}
+[Medical/commission_small/llama8b] steps=624 invalid=5.0% risky=44.9% acc=84.471% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission_small/llama70b] steps=2504 invalid=0.0% risky=8.0% acc=85.998% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission_small/gptoss20b] steps=2504 invalid=19.8% risky=47.2% acc=72.659% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission/llama8b] steps=624 invalid=5.0% risky=44.9% acc=100.000% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission/llama70b] steps=2504 invalid=0.0% risky=8.0% acc=99.541% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
+[Medical/commission/gptoss20b] steps=2504 invalid=19.8% risky=47.2% acc=99.622% conf_err=0.000% FA={'cusum': np.float64(0.0), 'window': np.float64(0.0), 'rate': np.float64(1.0)}
