@@ -45,6 +45,7 @@ their results next to themselves in `pilot/`.
 | Sec. 10, Result 4, Table `trigger` | Trigger-gated evidence | `pilot/lyra_behavioral_monitor_trigger.py` |
 | Sec. 10, Result 5, Table `llm` | Real LLM-agent traffic | `pilot/lyra_llm_agent_logs.py` (collect), `pilot/lyra_llm_monitor_eval.py` (evaluate) |
 | Sec. 10, Table `improve` | Improvement study (gate, CUSUM, ensembles) | `pilot/improve_run.py` (runs), `pilot/improve_compare.py` (compares) |
+| Sec. 10, Results 6-7, Table `dmr` | Bit-exact redundancy baseline B5; bit flips in the monitor's own weights | `pilot/lyra_redundancy_baseline.py` (`LYRA_SEED=0..4`), `pilot/redundancy_summary.py` |
 | Sec. 10, all monitor tables, Fig. 3 | Mean +- s.d. over repeat runs | `pilot/multiseed_summary.py`, `pilot/multiseed_extra.py`, `pilot/multiseed_tables.py` |
 | Sec. 11 | RTL simulation | `rtl/`, `tb/`, `tools/gen_secded_params*.py` |
 | Sec. 12, App. B | FPGA synthesis and live JTAG fault injection | `vivado/`, `scripts/`, `reports/vivado/` |

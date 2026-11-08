@@ -1,0 +1,43 @@
+runs: 5; replay mismatches: [0, 0, 0, 0, 0]
+
+== A. fault in the shield: monitor B4 vs. DMR B5, harmful faults, weighted by multiplicity
+class            B4 recall        B5 recall      B4 exposure      B5 exposure       B5 latency
+T1            73.34 ± 1.12     93.20 ± 0.36      2.65 ± 0.13      0.93 ± 0.00    204.05 ±13.57
+T3            96.16 ± 0.19     99.53 ± 0.10      2.33 ± 0.13      1.00 ± 0.00     30.46 ± 1.03
+D             57.12 ± 1.52     82.53 ± 1.19      2.18 ± 0.10      0.83 ± 0.01    382.59 ±12.98
+I             60.07 ± 1.05     86.56 ± 1.26      2.39 ± 0.13      0.87 ± 0.01    336.70 ±17.52
+C            100.00 ± 0.00    100.00 ± 0.00      2.09 ± 0.10      1.00 ± 0.00      3.27 ± 1.24
+ALL           94.66 ± 0.23     98.97 ± 0.12      2.33 ± 0.13      0.99 ± 0.00     43.26 ± 1.07
+LOW           34.27 ± 3.12     87.29 ± 1.41      4.09 ± 0.37      0.87 ± 0.01    443.12 ±10.19
+
+== B. fault in the reference, healthy shield, executed decision = shield OR reference
+enumerated faults 9367; decision-changing in the test streams (alarm at the first change):  9094.80 ± 5.12; silent   272.20 ± 5.12; unsafe executed decisions in all runs: 0
+
+== C. floating-point reference vs. the Q4.12 shield, no fault anywhere
+in_distribution  streams with a false alarm: mean  64.2%  worst domain/run  77.5%  best  51.0%; mismatches per stream 1.05
+low              streams with a false alarm: mean  66.6%  worst domain/run  79.5%  best  50.5%; mismatches per stream 1.13
+high             streams with a false alarm: mean  53.7%  worst domain/run  82.5%  best  12.5%; mismatches per stream 0.91
+
+== Host cost (Python on this machine; a rough ratio only)
+per decision: MLP 0.603 us, fixed-point reference 0.084 us; ratio 7.2
+  Financial  surrogate 4740 params = 37.0 KiB (float64); reference 4 thresholds = 8 bytes (plus the expressions)
+  Medical    surrogate 4805 params = 37.5 KiB (float64); reference 5 thresholds = 10 bytes (plus the expressions)
+  Cyber      surrogate 4804 params = 37.5 KiB (float64); reference 4 thresholds = 8 bytes (plus the expressions)
+  Power      surrogate 4740 params = 37.0 KiB (float64); reference 4 thresholds = 8 bytes (plus the expressions)
+
+== D. monitor weight flips, healthy shield (population-weighted over a uniformly random bit)
+group            share  alarm %   worst   NaN %   worst  changed %  extra blocks/2000
+sign              1.6%    17.47   39.44   0.000   0.000      59.84               4.23
+exponent         17.2%    15.51   35.54   0.391   0.660      56.61              45.36
+mantissa_high    18.8%     0.67    4.90   0.000   0.000      11.74               0.10
+mantissa_low     62.5%     0.00    0.00   0.000   0.000       0.00               0.00
+any bit         100.0%     3.07           0.067              12.87               7.88
+
+== E. double fault: a flip that raised no alarm + a harmful shield fault
+group            flips NaN flips  recall retained %  flips losing every detection
+sign              2000         0              100.6                       0/2000   (with NaN: 0)
+exponent          2000         7              100.1                       6/2000   (with NaN: 6)
+mantissa_high     2000         0              100.0                       0/2000   (with NaN: 0)
+mantissa_low      2000         0              100.0                       0/2000   (with NaN: 0)
+any bit                                       100.0
+panel: 44 faults or so per domain; baseline detection on the panel 79.0% (values above 100% retained mean a corrupted monitor raises more evidence, not that it is better)
