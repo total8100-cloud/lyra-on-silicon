@@ -1,0 +1,12 @@
+[Power/uniform/llama8b] FA=0.000 overblock=0.0000
+[Power/uniform/llama70b] FA=0.000 overblock=0.0004
+[Power/uniform/gptoss20b] FA=0.000 overblock=0.0004
+[Power/active/llama8b] FA=0.000 overblock=0.0016
+[Power/active/llama70b] FA=0.000 overblock=0.0012
+[Power/active/gptoss20b] FA=0.000 overblock=0.0012
+[Power/active_b/llama8b] FA=0.000 overblock=0.0000
+[Power/active_b/llama70b] FA=0.000 overblock=0.0000
+[Power/active_b/gptoss20b] FA=0.000 overblock=0.0000
+[Power/uniform_b/llama8b] FA=0.000 overblock=0.0000
+[Power/uniform_b/llama70b] FA=0.000 overblock=0.0004
+[Power/uniform_b/gptoss20b] FA=0.000 overblock=0.0004

@@ -1,0 +1,57 @@
+== LLM traffic (mean over seeds; per-seed difference from uniform)
+domains per seed [4, 4, 4]
+-- llama8b  ceiling 100.00
+  recall     uniform=   83.48  active=   98.63  active_b=   91.55  uniform_b=   84.82   active_b-uniform [ 1.39  0.62 22.2 ]
+  low        uniform=   60.44  active=   97.37  active_b=   78.63  uniform_b=   63.50   active_b-uniform [ 2.75 -0.51 52.31]
+  exposure   uniform=    3.60  active=    1.54  active_b=    1.82  uniform_b=    3.84   active_b-uniform [ 0.27 -1.68 -3.93]
+  not_vetoed uniform=    0.37  active=    0.23  active_b=    0.10  uniform_b=    0.63   active_b-uniform [-0.03 -0.57 -0.23]
+  silent     uniform=    0.00  active=    8.62  active_b=   17.24  uniform_b=    0.00   active_b-uniform [25.86  0.   25.86]
+  fa_max     uniform=    0.00  active=   33.17  active_b=   66.00  uniform_b=    0.00   active_b-uniform [ 98.   0. 100.]
+  overblock  uniform=    1.67  active=    1.11  active_b=    0.31  uniform_b=    0.69   active_b-uniform [-1.32 -1.56 -1.2 ]
+-- llama70b  ceiling 98.16
+  recall     uniform=   93.33  active=   95.13  active_b=   93.39  uniform_b=   86.83   active_b-uniform [-4.77  0.09  4.88]
+  low        uniform=   89.82  active=   91.29  active_b=   86.76  uniform_b=   76.30   active_b-uniform [-10.31  -2.84   3.94]
+  exposure   uniform=    3.86  active=    1.74  active_b=    1.61  uniform_b=    4.21   active_b-uniform [ 0.36 -1.39 -5.72]
+  not_vetoed uniform=    0.63  active=    0.40  active_b=    0.18  uniform_b=    1.07   active_b-uniform [-0.19 -0.89 -0.23]
+  silent     uniform=    0.00  active=    8.22  active_b=   14.81  uniform_b=    0.00   active_b-uniform [19.73  0.   24.7 ]
+  fa_max     uniform=    0.00  active=   33.17  active_b=   63.67  uniform_b=    0.00   active_b-uniform [ 91.   0. 100.]
+  overblock  uniform=    0.92  active=    0.39  active_b=    0.62  uniform_b=    0.50   active_b-uniform [ 0.03 -0.66 -0.26]
+-- gptoss20b  ceiling 99.65
+  recall     uniform=   95.16  active=   97.31  active_b=   97.99  uniform_b=   95.36   active_b-uniform [1.47 1.66 5.37]
+  low        uniform=   11.77  active=   38.88  active_b=   42.21  uniform_b=   17.15   active_b-uniform [41.54 -9.04 58.81]
+  exposure   uniform=    2.43  active=    1.48  active_b=    1.24  uniform_b=    2.96   active_b-uniform [ 0.04 -1.61 -1.99]
+  not_vetoed uniform=    0.35  active=    0.22  active_b=    0.06  uniform_b=    0.63   active_b-uniform [-0.09 -0.67 -0.12]
+  silent     uniform=    6.80  active=    7.83  active_b=   15.66  uniform_b=    0.00   active_b-uniform [ 3.1  0.  23.5]
+  fa_max     uniform=   19.83  active=   32.50  active_b=   64.17  uniform_b=    0.00   active_b-uniform [ 33.   0. 100.]
+  overblock  uniform=    2.44  active=    1.97  active_b=    0.19  uniform_b=    0.57   active_b-uniform [-2.07 -2.92 -1.79]
+real-traffic false alarms where uniform has none (method, agent, domain, seed, rate):
+   ('active_b', 'llama8b', 'Financial', 14, 0.98)
+   ('active', 'llama8b', 'Financial', 15, 0.995)
+   ('active_b', 'llama8b', 'Financial', 16, 1.0)
+   ('active_b', 'llama70b', 'Financial', 14, 0.91)
+   ('active', 'llama70b', 'Financial', 15, 0.995)
+   ('active_b', 'llama70b', 'Financial', 16, 1.0)
+   ('active_b', 'gptoss20b', 'Financial', 14, 0.925)
+   ('active', 'gptoss20b', 'Financial', 15, 0.975)
+   ('active_b', 'gptoss20b', 'Financial', 16, 1.0)
+  total 9
+
+== dense synthetic
+  ALL           uniform=  94.29  active=  95.56  active_b=  95.71  uniform_b=  94.33   diff [2.   1.91 0.32]
+  LOW           uniform=  28.78  active=  44.24  active_b=  46.17  uniform_b=  30.20   diff [24.43 23.61  4.15]
+  D             uniform=  56.61  active=  61.63  active_b=  62.94  uniform_b=  57.80   diff [9.57 7.59 1.82]
+  I             uniform=  59.63  active=  63.50  active_b=  65.55  uniform_b=  60.41   diff [8.86 8.51 0.38]
+  exposure      uniform=   2.35  active=   1.87  active_b=   2.11  uniform_b=   2.29   diff [-0.25 -0.23 -0.24]
+  veto          uniform=   1.57  active=   0.69  active_b=   0.83  uniform_b=   1.66   diff [-0.73 -1.39 -0.13]
+  silent_alarm  uniform=   0.00  active=   0.00  active_b=   1.18  uniform_b=   0.00   diff [3.54 0.   0.  ]
+  shift_fa_max  uniform=   0.50  active=   0.33  active_b=   0.83  uniform_b=   1.67   diff [ 1.5 -0.5  0. ]
+  overblock_max uniform=   0.08  active=   0.04  active_b=   0.04  uniform_b=   0.08   diff [-0.06 -0.02 -0.02]
+  ceiling {'ALL': 98.98, 'LOW': 87.15}
+  worst shift FA {'uniform': 1.0, 'active': 0.5, 'active_b': 2.5, 'uniform_b': 5.0}
+
+== criteria for active_b
+  1 LLM recall up on all agents: True
+  2 no new real-traffic false alarm: False
+  3a dense recall >= uniform: True
+  3b dense worst shift FA <= uniform + 1: False
+  PASS: False

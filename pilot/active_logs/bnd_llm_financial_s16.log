@@ -1,0 +1,12 @@
+[Financial/uniform/llama8b] FA=0.000 overblock=0.0080
+[Financial/uniform/llama70b] FA=0.000 overblock=0.0076
+[Financial/uniform/gptoss20b] FA=0.000 overblock=0.0008
+[Financial/active/llama8b] FA=0.000 overblock=0.0000
+[Financial/active/llama70b] FA=0.000 overblock=0.0000
+[Financial/active/gptoss20b] FA=0.000 overblock=0.0000
+[Financial/active_b/llama8b] FA=1.000 overblock=0.0000
+[Financial/active_b/llama70b] FA=1.000 overblock=0.0000
+[Financial/active_b/gptoss20b] FA=1.000 overblock=0.0000
+[Financial/uniform_b/llama8b] FA=0.000 overblock=0.0000
+[Financial/uniform_b/llama70b] FA=0.000 overblock=0.0000
+[Financial/uniform_b/gptoss20b] FA=0.000 overblock=0.0000

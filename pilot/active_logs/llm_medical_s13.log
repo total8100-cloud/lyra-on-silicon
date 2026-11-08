@@ -1,0 +1,6 @@
+[Medical/uniform/llama8b] FA=0.000 overblock=0.0000
+[Medical/uniform/llama70b] FA=0.000 overblock=0.0028
+[Medical/uniform/gptoss20b] FA=0.000 overblock=0.0000
+[Medical/active/llama8b] FA=0.000 overblock=0.0000
+[Medical/active/llama70b] FA=0.000 overblock=0.0008
+[Medical/active/gptoss20b] FA=0.000 overblock=0.0004

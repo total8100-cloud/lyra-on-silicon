@@ -1,0 +1,12 @@
+[Cyber/uniform/llama8b] FA=0.000 overblock=0.0401
+[Cyber/uniform/llama70b] FA=0.000 overblock=0.0264
+[Cyber/uniform/gptoss20b] FA=0.000 overblock=0.0711
+[Cyber/active/llama8b] FA=0.000 overblock=0.0337
+[Cyber/active/llama70b] FA=0.000 overblock=0.0000
+[Cyber/active/gptoss20b] FA=0.000 overblock=0.0823
+[Cyber/active_b/llama8b] FA=0.000 overblock=0.0000
+[Cyber/active_b/llama70b] FA=0.000 overblock=0.0248
+[Cyber/active_b/gptoss20b] FA=0.000 overblock=0.0004
+[Cyber/uniform_b/llama8b] FA=0.000 overblock=0.0048
+[Cyber/uniform_b/llama70b] FA=0.000 overblock=0.0000
+[Cyber/uniform_b/gptoss20b] FA=0.000 overblock=0.0164
