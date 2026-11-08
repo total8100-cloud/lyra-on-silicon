@@ -1,8 +1,9 @@
-"""The paper's monitor (uniform commissioning sweep) on real LLM-agent traffic, seeds 11-16, with every
-metric of Table llm (PRD Sec 9.37). Replays the random streams of lyra_active_llm_eval.py, which saved only
-part of the metrics, and checks each fault against that run. Then pools seeds 0-4 and 11-16.
+"""The paper's monitor (uniform commissioning sweep) on real LLM-agent traffic, every seed added after the
+first five, with every metric of Table llm (PRD Sec 9.37, 9.39). Replays the random streams of the experiments
+that first ran those seeds, which saved only part of the metrics, and checks each fault against that run. Then
+pools all 29 runs.
 
-Usage: LYRA_SEED=<11..16> python pilot/lyra_llm_extra_seeds.py --domain medical
+Usage: LYRA_SEED=<seed> python pilot/lyra_llm_extra_seeds.py --domain medical
        python pilot/lyra_llm_extra_seeds.py --summary
 """
 import argparse
@@ -18,7 +19,7 @@ import lyra_active_llm_eval as al  # noqa: E402
 from lyra_active_llm_eval import bm, ev, tg, load_schema  # noqa: E402
 
 PAPER = [0, 1, 2, 3, 4]
-EXTRA = [11, 12, 13, 14, 15, 16]
+EXTRA = [11, 12, 13, 14, 15, 16, 20, 21, 22, 23, 24, 25] + list(range(30, 42))
 
 
 def run_domain(dom):
@@ -65,10 +66,18 @@ def run_domain(dom):
             conf_veto_overblock_rate=float((bm.blocks(P) & ~D & conf).any(axis=1).mean()))
         out["faults"][ag] = tg.evaluate_faults(dom, sh, tests, theta_if, win, cus, rate, act_frac)
     # the replay must match the earlier run of the same seed, fault by fault
-    old = json.load(open(HERE / f"active_llm_results_{d}_s{seed}.json"))["methods"]["uniform"]["agents"]
-    bad = sum(n["B4c"] != o["det"] or n["B4c_exposure"] != o["exp"] or n["harmful"] != o["harmful"]
-              for ag in ev.AGENTS for n, o in zip(out["faults"][ag], old[ag]["faults"]))
-    bad += sum(out["agents"][ag]["false_alarm"]["cusum"] != old[ag]["fa"] for ag in ev.AGENTS)
+    if seed <= 16:
+        old = json.load(open(HERE / f"active_llm_results_{d}_s{seed}.json"))["methods"]["uniform"]["agents"]
+        ref = {ag: (old[ag]["fa"], [(x["det"], x["exp"], x["harmful"]) for x in old[ag]["faults"]]) for ag in ev.AGENTS}
+    elif seed <= 25:
+        old = json.load(open(HERE / f"alarm_llm_results_{d}_s{seed}.json"))["agents"]
+        ref = {ag: (old[ag]["fa"]["base"], [(x["det"]["base"], x["exp"]["base"], x["harmful"]) for x in old[ag]["faults"]]) for ag in ev.AGENTS}
+    else:
+        old = json.load(open(HERE / f"acceptance_results_{d}_s{seed}.json"))["agents"]
+        ref = {ag: (old[ag]["base"]["fa"], [(x["det"], x["exp"], x["harmful"]) for x in old[ag]["base"]["faults"]]) for ag in ev.AGENTS}
+    bad = sum((n["B4c"], n["B4c_exposure"], n["harmful"]) != o
+              for ag in ev.AGENTS for n, o in zip(out["faults"][ag], ref[ag][1]))
+    bad += sum(out["agents"][ag]["false_alarm"]["cusum"] != ref[ag][0] for ag in ev.AGENTS)
     print(f"[{dom} s{seed}] replay mismatches: {bad}", flush=True)
     if bad:
         sys.exit(2)
@@ -94,7 +103,7 @@ def load(seed):
 
 def summarize():
     out = {}
-    for label, seeds in (("paper_5", PAPER), ("extra_6", EXTRA), ("all_11", PAPER + EXTRA)):
+    for label, seeds in (("paper_5", PAPER), ("added_24", EXTRA), ("all_29", PAPER + EXTRA)):
         out[label] = {}
         print(f"\n===== {label}: seeds {seeds}")
         runs = {s: load(s) for s in seeds}
@@ -139,7 +148,7 @@ def summarize():
                     for dom, r in per.items() for ag in ev.AGENTS if r["agents"][ag]["false_alarm"]["cusum"] > 0]
         print("false-alarm cases:", fa_cases, "of", len(seeds) * 4 * 3)
         out[label]["fa_cases"] = fa_cases
-    json.dump(out, open(HERE / "llm_eleven_runs_summary.json", "w"), indent=1)
+    json.dump(out, open(HERE / "llm_all_runs_summary.json", "w"), indent=1)
 
 
 if __name__ == "__main__":

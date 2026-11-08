@@ -1,0 +1,49 @@
+===== diagnostic seeds (14, 21)
+-- llama8b
+   recall    base   87.03  accepted   85.93  diff  -1.10
+   low       base   66.99  accepted   66.31  diff  -0.67
+   exposure  base    2.19  accepted    3.17  diff  +0.98
+   false alarms base [(21, 'Financial', 0.955)]  accepted []
+-- llama70b
+   recall    base   91.52  accepted   89.76  diff  -1.76
+   low       base   83.15  accepted   82.33  diff  -0.82
+   exposure  base    1.61  accepted    3.41  diff  +1.80
+   false alarms base [(21, 'Financial', 0.83)]  accepted []
+-- gptoss20b
+   recall    base   97.19  accepted   95.20  diff  -1.99
+   low       base   24.88  accepted    6.11  diff -18.77
+   exposure  base    1.52  accepted    2.50  diff  +0.98
+   false alarms base [(14, 'Cyber', 0.595), (21, 'Financial', 0.85)]  accepted []
+models rejected at least once (seed, domain, alarms of 20 per attempt, accepted attempt):
+   (14, 'Cyber', [16, 0], 1)
+   (21, 'Financial', [11, 0], 1)
+   2 of 8 domain models
+
+===== evaluation seeds (30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41)
+-- llama8b
+   recall    base   81.66  accepted   81.66  diff  +0.00
+   low       base   55.04  accepted   55.04  diff  +0.00
+   exposure  base    3.02  accepted    3.06  diff  +0.04
+   false alarms base [(30, 'Cyber', 1.0), (35, 'Cyber', 1.0), (39, 'Financial', 0.945)]  accepted [(39, 'Financial', 0.945)]
+-- llama70b
+   recall    base   91.09  accepted   91.09  diff  +0.00
+   low       base   84.99  accepted   84.99  diff  +0.00
+   exposure  base    3.18  accepted    3.18  diff  +0.00
+   false alarms base [(39, 'Financial', 0.57)]  accepted [(39, 'Financial', 0.57)]
+-- gptoss20b
+   recall    base   95.74  accepted   95.74  diff  +0.00
+   low       base   11.40  accepted   11.40  diff  +0.00
+   exposure  base    2.25  accepted    2.31  diff  +0.07
+   false alarms base [(30, 'Cyber', 1.0), (35, 'Cyber', 0.99), (39, 'Financial', 0.515), (41, 'Cyber', 0.985)]  accepted [(39, 'Financial', 0.515)]
+models rejected at least once (seed, domain, alarms of 20 per attempt, accepted attempt):
+   (30, 'Cyber', [20, 18, 0], 2)
+   (35, 'Cyber', [19, 0], 1)
+   (41, 'Cyber', [15, 0], 1)
+   3 of 48 domain models
+
+== criteria
+  combinations above 1%: base 8, accepted 3 of 144
+  1 at most half of base: True
+  2 pilot agent clean: False
+  3 recall loss <= 2: True [0. 0. 0.]
+  PASS: False

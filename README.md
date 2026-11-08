@@ -47,8 +47,9 @@ their results next to themselves in `pilot/`.
 | Sec. 10, Result 5, Table `llm` | Real LLM-agent traffic | `pilot/lyra_llm_agent_logs.py` (collect), `pilot/lyra_llm_monitor_eval.py` (evaluate) |
 | Sec. 10, Table `improve` | Improvement study (gate, CUSUM, ensembles) | `pilot/improve_run.py` (runs), `pilot/improve_compare.py` (compares) |
 | Sec. 10, Results 6-7, Table `dmr` | Bit-exact redundancy baseline B5; bit flips in the monitor's own weights | `pilot/lyra_redundancy_baseline.py` (`LYRA_SEED=0..4`), `pilot/redundancy_summary.py` |
-| Sec. 10, Result 5, Table `llm` (runs added after the first five) | The monitor on LLM traffic, seeds 11-16, and the pooled 11-run figures | `pilot/lyra_llm_extra_seeds.py` |
+| Sec. 10, Result 5, Table `llm` (runs added after the first five) | The monitor on LLM traffic, 24 added seeds, and the pooled 29-run figures | `pilot/lyra_llm_extra_seeds.py` |
 | Sec. 10, active commissioning (negative result) | Uncertainty-sampled commissioning, two attempts | `pilot/lyra_active_commissioning.py`, `pilot/lyra_active_llm_eval.py`, `pilot/lyra_active_boundary_eval.py` |
+| Sec. 10, mitigating the false alarms (negative results) | Alarm rules; pre-deployment acceptance test | `pilot/lyra_alarm_rule_eval.py`, `pilot/lyra_acceptance_eval.py` |
 | Sec. 10, all monitor tables, Fig. 3 | Mean +- s.d. over repeat runs | `pilot/multiseed_summary.py`, `pilot/multiseed_extra.py`, `pilot/multiseed_tables.py` |
 | Sec. 11 | RTL simulation | `rtl/`, `tb/`, `tools/gen_secded_params*.py` |
 | Sec. 12, App. B | FPGA synthesis and live JTAG fault injection | `vivado/`, `scripts/`, `reports/vivado/` |
