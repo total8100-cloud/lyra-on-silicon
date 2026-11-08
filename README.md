@@ -2,11 +2,12 @@
 
 Code, data and hardware sources for the paper
 
-> **Lyra on Silicon: Diagnosing Random Hardware Faults in a Formally Verified Compliance Shield
+> **Diagnosing Random Hardware Faults in a Formally Verified Compliance Shield
 > with a Learned Black-Box Integrity Monitor**
 > Gyu-Hyun Lim, Yuchul Jung (Kumoh National Institute of Technology)
 
-The paper takes the Lyra compliance shield ([total8100-cloud/lyra](https://github.com/total8100-cloud/lyra)),
+The paper studies shields that compile regulatory constraints into threshold comparisons. It takes the
+Lyra compliance shield ([total8100-cloud/lyra](https://github.com/total8100-cloud/lyra)),
 unmodified, and asks what a random hardware fault does to it, what detects the fault, and what
 remains undetected. This repository contains the fault-injection experiments, the SECDED
 mitigation, the learned black-box integrity monitor, the real LLM-agent decision logs, the
